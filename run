@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -eu -o pipefail
+
+topo2geo LA2020EW=lad2020-simplified.geo.json < lad2020-simplified.topo.json
+python3 get_bboxes.py < lad2020-simplified.geo.json > bboxes.json
